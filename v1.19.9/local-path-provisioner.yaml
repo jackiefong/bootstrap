@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap.local-path-provisioner
+  name: bootstrap-local-path-provisioner
   namespace: argocd
 spec:
   destination:
