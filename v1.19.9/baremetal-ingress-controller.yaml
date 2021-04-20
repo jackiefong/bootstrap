@@ -21,7 +21,7 @@ spec:
         - name: controller.service.nodePorts.https
           value: '30443'
         - name: controller.service.type
-          value: ''
+          value: 'NodePort'
         - name: controller.kind
           value: DaemonSet
   project: operation
