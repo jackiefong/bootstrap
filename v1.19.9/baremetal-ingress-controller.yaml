@@ -1,17 +1,30 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap-baremetal-ingress-controller
-  namespace: argocd
+  name: ingress-nginx
 spec:
   destination:
+    name: ''
     namespace: ingress-nginx
     server: 'https://kubernetes.default.svc'
-  project: default
   source:
-    path: v1.19.9/baremetal-ingress-controller
-    repoURL: 'https://github.com/jackiefong/bootstrap.git'
-    targetRevision: HEAD
+    path: ''
+    repoURL: 'https://kubernetes.github.io/ingress-nginx'
+    targetRevision: 3.29.0
+    chart: ingress-nginx
+    helm:
+      parameters:
+        - name: controller.hostNetwork
+          value: 'true'
+        - name: controller.service.nodePorts.http
+          value: '30080'
+        - name: controller.service.nodePorts.https
+          value: '30443'
+        - name: controller.service.type
+          value: ''
+        - name: controller.kind
+          value: DaemonSet
+  project: operation
   syncPolicy:
     automated:
       prune: true
