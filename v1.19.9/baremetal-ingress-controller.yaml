@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: baremetal-ingress-controller
+  namespace: argocd
+  resourceVersion: '3481917'
+  selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/bootstrap
+  uid: 9a767d36-a792-466d-985f-df0c3387079a
+spec:
+  destination:
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: v1.19.9/baremetal-ingress-controller
+    repoURL: 'https://github.com/jackiefong/bootstrap.git'
+    targetRevision: HEAD
