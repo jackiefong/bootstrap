@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap_baremetal-ingress-controller
+  name: bootstrap.baremetal-ingress-controller
   namespace: argocd
   resourceVersion: '3481917'
   selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/bootstrap
