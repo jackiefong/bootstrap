@@ -16,6 +16,8 @@ spec:
       parameters:
         - name: controller.hostNetwork
           value: 'true'
+        - name: controller.service.externalTrafficPolicy
+          value: Local
         - name: controller.service.nodePorts.http
           value: '30080'
         - name: controller.service.nodePorts.https
