@@ -16,7 +16,7 @@ spec:
     helm:
       parameters:
         - name: replicas
-          value: 1
+          value: '1'
         - name: esJavaOpts
           value: '-Xmx128m -Xms128m'
         - name: volumeClaimTemplate.resources.requests.storage
