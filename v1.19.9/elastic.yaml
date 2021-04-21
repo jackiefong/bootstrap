@@ -15,6 +15,8 @@ spec:
     chart: elasticsearch
     helm:
       parameters:
+        - name: replicas
+          value: 1
         - name: esJavaOpts
           value: '-Xmx128m -Xms128m'
         - name: volumeClaimTemplate.resources.requests.storage
