@@ -18,15 +18,15 @@ spec:
         - name: replicas
           value: '2'
         - name: esJavaOpts
-          value: '-Xmx800m -Xms800m'
+          value: '-Xmx1024m -Xms1024m'
         - name: volumeClaimTemplate.resources.requests.storage
           value: 1Gi
         - name: resources.requests.cpu
           value: 100m
         - name: resources.limits.memory
-          value: 1024M
+          value: 1500M
         - name: resources.requests.memory
-          value: 1024M
+          value: 1500M
   project: operation
   syncPolicy:
     automated:
