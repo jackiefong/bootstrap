@@ -18,7 +18,7 @@ spec:
         - name: replicas
           value: '2'
         - name: esJavaOpts
-          value: '-Xmx1000m -Xms1000m'
+          value: '-Xmx800m -Xms800m'
         - name: volumeClaimTemplate.resources.requests.storage
           value: 1Gi
         - name: resources.requests.cpu
