@@ -27,5 +27,8 @@ spec:
           value: 512M
   project: operation
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+          - CreateNamespace=true      
