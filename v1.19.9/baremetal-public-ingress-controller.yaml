@@ -19,9 +19,9 @@ spec:
         - name: controller.service.externalTrafficPolicy
           value: Local
         - name: controller.service.nodePorts.http
-          value: '31080'
+          value: '30080'
         - name: controller.service.nodePorts.https
-          value: '31443'
+          value: '30443'
         - name: controller.service.type
           value: 'NodePort'
   project: operation
