@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap-prometheus-operator
+  name: prometheus-operator
   namespace: argocd
 spec:
   destination:
