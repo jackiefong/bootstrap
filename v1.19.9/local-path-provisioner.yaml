@@ -5,9 +5,9 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: operation
+    namespace: local-path-provisioner
     server: 'https://kubernetes.default.svc'
-  project: default
+  project: operation
   source:
     path: v1.19.9/local-path-provisioner
     repoURL: 'https://github.com/jackiefong/bootstrap.git'
