@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: internal-ingress-nginx
+  namespace: argocd
+spec:
+  destination:
+    namespace: public-ingress-nginx
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://kubernetes.github.io/ingress-nginx'
+    targetRevision: 3.29.0
+    chart: ingress-nginx
+    helm:
+      parameters:
+        - name: controller.hostNetwork
+          value: 'true'
+        - name: controller.service.externalTrafficPolicy
+          value: Local
+        - name: controller.service.nodePorts.http
+          value: '30080'
+        - name: controller.service.nodePorts.https
+          value: '30443'
+        - name: controller.service.type
+          value: 'NodePort'
+        - name: controller.ingressClass
+          value: public-ingress
+  project: operation
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+          - CreateNamespace=true     
