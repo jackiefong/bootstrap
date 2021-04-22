@@ -14,16 +14,16 @@ spec:
     chart: ingress-nginx
     helm:
       parameters:
-#         - name: controller.hostNetwork
-#           value: 'true'
+        - name: controller.hostNetwork
+          value: 'true'
         - name: controller.service.externalTrafficPolicy
           value: Local
-#         - name: controller.service.nodePorts.http
-#           value: '31080'
-#         - name: controller.service.nodePorts.https
-#           value: '31443'
-#         - name: controller.service.type
-#           value: 'NodePort'
+        - name: controller.service.nodePorts.http
+          value: '31080'
+        - name: controller.service.nodePorts.https
+          value: '31443'
+        - name: controller.service.type
+          value: 'NodePort'
   project: operation
   syncPolicy:
     automated:
