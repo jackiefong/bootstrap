@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap-ingress-nginx
+  name: internal-ingress-nginx
   namespace: argocd
 spec:
   destination:
-    namespace: ingress-nginx
+    namespace: internal-ingress-nginx
     server: 'https://kubernetes.default.svc'
   source:
     path: ''
@@ -24,8 +24,8 @@ spec:
           value: '30443'
         - name: controller.service.type
           value: 'NodePort'
-        - name: controller.kind
-          value: DaemonSet
+        - name: controller.ingressClass
+          value: internal-ingress
   project: operation
   syncPolicy:
     automated:
