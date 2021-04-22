@@ -24,6 +24,8 @@ spec:
           value: '30443'
         - name: controller.service.type
           value: 'NodePort'
+        - name: controller.ingressClass
+          value: public-ingress          
   project: operation
   syncPolicy:
     automated:
