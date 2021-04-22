@@ -15,7 +15,7 @@ spec:
       parameters:
         - name: installCRDs
           value: 'True'
-  project: default
+  project: operation
   syncPolicy:
     automated:
       prune: true
