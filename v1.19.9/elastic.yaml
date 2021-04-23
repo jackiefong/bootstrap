@@ -21,6 +21,8 @@ spec:
           value: '-Xmx1024m -Xms1024m'
         - name: volumeClaimTemplate.resources.requests.storage
           value: 1Gi
+        - name: resources.limits.cpu
+          value: 3000m
         - name: resources.requests.cpu
           value: 100m
         - name: resources.limits.memory
