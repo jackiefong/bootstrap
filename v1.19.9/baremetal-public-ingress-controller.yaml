@@ -25,7 +25,9 @@ spec:
         - name: controller.service.type
           value: 'NodePort'
         - name: controller.ingressClass
-          value: public-ingress          
+          value: public-ingress
+        - name: controller.admissionWebhooks.enabled
+          value: false          
   project: operation
   syncPolicy:
     automated:
