@@ -22,7 +22,7 @@ spec:
         - name: volumeClaimTemplate.resources.requests.storage
           value: 1Gi
         - name: resources.limits.cpu
-          value: 3000m
+          value: 1000m
         - name: resources.requests.cpu
           value: 100m
         - name: resources.limits.memory
