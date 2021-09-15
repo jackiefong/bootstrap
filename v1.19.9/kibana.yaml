@@ -11,6 +11,12 @@ spec:
     repoURL: 'https://Helm.elastic.co'
     targetRevision: 7.12.0
     chart: kibana
+    helm:
+      parameters:
+        - name: resources.requests.cpu
+          value: '100m'
+        - name: resources.requests.memory
+          value: '200M'          
   project: operation
   syncPolicy:
     syncOptions:
