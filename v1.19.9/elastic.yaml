@@ -22,13 +22,13 @@ spec:
         - name: volumeClaimTemplate.resources.requests.storage
           value: 1Gi
         - name: resources.limits.cpu
-          value: 200m
+          value: 1
         - name: resources.requests.cpu
-          value: 100m
+          value: 200m
         - name: resources.limits.memory
-          value: 1000M
+          value: 2G
         - name: resources.requests.memory
-          value: 1000M
+          value: 256M
   project: operation
   syncPolicy:
     automated:
