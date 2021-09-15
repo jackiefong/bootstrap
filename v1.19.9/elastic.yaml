@@ -20,15 +20,15 @@ spec:
         - name: esJavaOpts
           value: '-Xmx512m -Xms512m'
         - name: volumeClaimTemplate.resources.requests.storage
-          value: 1Gi
+          value: '1Gi'
         - name: resources.limits.cpu
-          value: 1
+          value: '1'
         - name: resources.requests.cpu
-          value: 200m
+          value: '200m'
         - name: resources.limits.memory
-          value: 2G
+          value: '2G'
         - name: resources.requests.memory
-          value: 256M
+          value: '256M'
   project: operation
   syncPolicy:
     automated:
