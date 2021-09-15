@@ -16,7 +16,13 @@ spec:
         - name: resources.requests.cpu
           value: '100m'
         - name: resources.requests.memory
-          value: '200M'          
+          value: '200M'
+  helm:
+    parameters:
+      - name: resources.requests.cpu
+        value: 100m
+      - name: resources.requests.memory
+        value: 200M          
   project: operation
   syncPolicy:
     syncOptions:
