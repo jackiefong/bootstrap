@@ -105,6 +105,6 @@ spec:
             - name: PROVISIONER_NAME
               value: example.com/nfs
             - name: NFS_SERVER
-              value: 192.168.1.100
+              value: 192.168.1.143
             - name: NFS_PATH
               value: /srv/nfs/storage
