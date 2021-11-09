@@ -50,8 +50,61 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: nfs-client-provisioner
-    namespace: default
+    namespace: nfs-provisioner
 roleRef:
   kind: Role
   name: leader-locking-nfs-client-provisioner
   apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: managed-nfs-storage
+  labels:
+    type: nfs
+    storage: nfs
+provisioner: jackie/nfs
+volumeBindingMode: WaitForFirstConsumer
+parameters:
+  archiveOnDelete: "false"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-client-provisioner
+  labels:
+    app: nfs-client-provisioner
+    tier: storage
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: nfs-client-provisioner
+      tier: storage
+  template:
+    metadata:
+      labels:
+        app: nfs-client-provisioner
+        tier: storage
+    spec:
+      serviceAccountName: nfs-client-provisioner
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: 192.168.1.100
+            path: /srv/nfs/storage
+      containers:
+        - name: nfs-client-provisioner
+          image: quay.io/external_storage/nfs-client-provisioner:latest
+          volumeMounts:
+            - name: nfs-client-root
+              mountPath: /persistentvolumes
+          env:
+            - name: PROVISIONER_NAME
+              value: example.com/nfs
+            - name: NFS_SERVER
+              value: 192.168.1.100
+            - name: NFS_PATH
+              value: /srv/nfs/storage
