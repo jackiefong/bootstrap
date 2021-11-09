@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nfs-provisioner
+  namespace: argocd
+spec:
+  destination:
+    namespace: nfs-provisioner
+    server: 'https://kubernetes.default.svc'
+  project: operation
+  source:
+    path: v1.19.9/nfs-provisioner
+    repoURL: 'https://github.com/jackiefong/bootstrap.git'
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
