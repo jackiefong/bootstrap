@@ -27,11 +27,11 @@ spec:
                     - logs_path:
                         logs_path: "/var/log/containers/"
                 - drop_event.when:
-                  or:
-                  - equals:
-                      kubernetes.namespace: "kube-system"
-                  - equals:
-                      kubernetes.namespace: "argocd"
+                    or:
+                    - equals:
+                        kubernetes.namespace: "kube-system"
+                    - equals:
+                        kubernetes.namespace: "argocd"
               output.elasticsearch:
                 host: '${NODE_NAME}'
                 hosts: '${ELASTICSEARCH_HOSTS:elasticsearch-master:9200}'
