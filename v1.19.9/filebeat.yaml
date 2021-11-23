@@ -43,7 +43,7 @@ spec:
                     - equals:
                         kubernetes.namespace: "logging"
                     - equals:
-                        kubernetes.namespace: "metalib-system"
+                        kubernetes.namespace: "metallb-system"
                     - equals:
                         kubernetes.namespace: "monitoring"
                     - equals:
