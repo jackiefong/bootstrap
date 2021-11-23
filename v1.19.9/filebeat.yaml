@@ -45,6 +45,8 @@ spec:
                     - equals:
                         kubernetes.namespace: "metalib-system"
                     - equals:
+                        kubernetes.namespace: "monitoring"
+                    - equals:
                         kubernetes.namespace: "nfs-provisioner"
                     - equals:
                         kubernetes.namespace: "public-ingress-nginx"                       
