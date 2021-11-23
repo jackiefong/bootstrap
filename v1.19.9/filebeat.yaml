@@ -29,9 +29,25 @@ spec:
                 - drop_event.when:
                     or:
                     - equals:
+                        kubernetes.namespace: "argocd"
+                    - equals:
+                        kubernetes.namespace: "cert-manager"
+                    - equals:
+                        kubernetes.namespace: "internal-ingress-nginx"
+                    - equals:
+                        kubernetes.namespace: "kube-public"
+                    - equals:
                         kubernetes.namespace: "kube-system"
                     - equals:
-                        kubernetes.namespace: "argocd"
+                        kubernetes.namespace: "local-path-storage"
+                    - equals:
+                        kubernetes.namespace: "logging"
+                    - equals:
+                        kubernetes.namespace: "metalib-system"
+                    - equals:
+                        kubernetes.namespace: "nfs-provisioner"
+                    - equals:
+                        kubernetes.namespace: "public-ingress-nginx"                       
               output.elasticsearch:
                 host: '${NODE_NAME}'
                 hosts: '${ELASTICSEARCH_HOSTS:elasticsearch-master:9200}'
