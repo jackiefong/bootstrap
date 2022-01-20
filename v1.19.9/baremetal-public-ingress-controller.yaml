@@ -22,8 +22,8 @@ spec:
           value: '30080'
         - name: controller.service.nodePorts.https
           value: '30443'
-        - name: controller.service.type
-          value: 'NodePort'
+        - name: controller.service.loadBalancerIP
+          value: '192.168.68.201'
         - name: controller.ingressClass
           value: public-ingress
         - name: controller.admissionWebhooks.enabled
