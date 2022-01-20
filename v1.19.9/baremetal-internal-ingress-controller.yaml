@@ -24,8 +24,10 @@ spec:
 #           value: '31443'
 #         - name: controller.service.type
 #           value: 'NodePort'
+        - name: controller.service.loadBalancerIP
+          value: '192.168.68.200'
         - name: controller.ingressClass
-          value: internal-ingress
+          value: internal-ingress                    
         - name: controller.admissionWebhooks.enabled
           value: 'false'               
   project: operation
